@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerCtrl : MonoBehaviour {
 
-	public float horizontalSpeed = 10f;
+	public float horizontalSpeed = 6f;
 
-	public float jumpSpeed = 600f;
+	public float jumpSpeed = 500f;
 
 	Rigidbody2D rb;
 
@@ -16,7 +16,7 @@ public class PlayerCtrl : MonoBehaviour {
 
 	bool isJumping = false;
 
-	public Transform feet;
+	public Transform feet = null;
 
 	public float feetWidth = 0.5f;
 
@@ -44,6 +44,10 @@ public class PlayerCtrl : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		if (transform.position.y < GM.instance.yMinLive){
+			GM.instance.KillPlayer();
+		}
+ 
 		isGrounded = Physics2D.OverlapBox(new Vector2(feet.position.x, feet.position.y), new Vector2(feetWidth, feetHeight), 360.0f, whatIsGround);
 		
 		float horizontalInput = Input.GetAxisRaw("Horizontal"); //-1 esquerda, 1 direta
@@ -92,9 +96,9 @@ public class PlayerCtrl : MonoBehaviour {
 
 	void Jump(){
 		if (isGrounded){
-		isJumping = true;
-		rb.AddForce(new Vector2(0f, jumpSpeed));
-		anim.SetInteger("State", 1);
+			isJumping = true;
+			rb.AddForce(new Vector2(0f, jumpSpeed));
+			anim.SetInteger("State", 1);
 
 			Invoke("EnableDoubleJump", delayForDoubleJump);
 		}
