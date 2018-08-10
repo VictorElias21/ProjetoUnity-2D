@@ -6,6 +6,7 @@ TagManager:
   tags:
   - BG
   - Groud
+  - Coin
   layers:
   - Default
   - TransparentFX
