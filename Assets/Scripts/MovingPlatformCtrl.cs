@@ -1,36 +1,32 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class MovingPlatformCtrl : MonoBehaviour {
-
-	public Transform Pos1, Pos2;
-
+ public class MovingPlatformCtrl : MonoBehaviour {
+ 	
+	public Transform pos1, pos2;
 	public float speed = 2f;
-
-	public float waitTime = 0.5f;
-
-	Vector3 nextPos;
-	void Start () {
-		nextPos = Pos1.position;
+ 	public float waitTime = 0.5f;
+ 	Vector3 nextPos;
+ 	void Start () {
+	    nextPos = pos1.position; 
+		StartCoroutine(Move());
 	}
-
-	IEnumerable Move(){
-		while (true){
-			if (transform.position == Pos1.position){
-				nextPos = Pos2.position;
+ 	IEnumerator Move(){
+        while (true){
+			if (transform.position == pos1.position){
+				nextPos = pos2.position;
 				yield return new WaitForSeconds(waitTime);
 			}
-			if (transform.position == Pos2.position){
-				nextPos = Pos1.position;
+			if (transform.position == pos2.position){
+				nextPos = pos1.position;
 				yield return new WaitForSeconds(waitTime);
 			}
 			transform.position = Vector3.MoveTowards(transform.position, nextPos, speed * Time.deltaTime);
-			yield return null;
+		     yield return null;
 		}
 	}
-
+	 	
 	void OnDrawGizmos(){
-		Gizmos.DrawLine(Pos1.position, Pos2.position);
+		Gizmos.DrawLine(pos1.position,pos2.position);
 	}
 }
