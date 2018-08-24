@@ -1316,6 +1316,12 @@ MonoBehaviour:
   SpawnPoint: {fileID: 955616167}
   PlayerPrefab: {fileID: 1465189301355676, guid: 40ded7fe469aa6d44a9a442e61b03f49,
     type: 2}
+  ui:
+    hud:
+      TxtCoinCount: {fileID: 185620719}
+      txtLifeCount: {fileID: 1088292554}
+      txtTimer: {fileID: 778206914}
+      hudPanel: {fileID: 777932362}
   timeToRespawn: 2
 --- !u!4 &726870011
 Transform:

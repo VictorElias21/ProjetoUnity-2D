@@ -41,10 +41,11 @@ public class GM : MonoBehaviour {
 				player = obj.GetComponent<PlayerCtrl>();
 			}
 		}
+		DisplayHudData();
 	}
 
 	void DisplayHudData(){
-		ui.hud.TxtCoinCount.text = "x 0" + data.coinCount;
+		ui.hud.TxtCoinCount.text = "x " + data.coinCount;
 	}
 	public void IncrementCoinCount(){
 		data.coinCount++;
