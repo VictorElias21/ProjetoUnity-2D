@@ -1729,6 +1729,7 @@ MonoBehaviour:
       txtTimer: {fileID: 1292333551}
       LevelCompletePanel: {fileID: 959795172}
   timeToRespawn: 2
+  timeToKill: 1.5
 --- !u!4 &726870011
 Transform:
   m_ObjectHideFlags: 0
@@ -3269,6 +3270,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSFX:
     coinPickup: {fileID: 8300000, guid: 7d3502c6b9740944a8e47cbb1fabcc00, type: 3}
+    fail: {fileID: 8300000, guid: c5410163f1369584da7d2b76d8d70f55, type: 3}
   audioPlayer:
     jump: {fileID: 8300000, guid: 933f5314a4d0ef344b1c4b0dd79d2a44, type: 3}
 --- !u!1 &1278694670
