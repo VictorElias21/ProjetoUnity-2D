@@ -7,4 +7,6 @@ using System;
 public class AudioSFX {
 
 	public AudioClip coinPickup;
+
+    public AudioClip fail;
 }
