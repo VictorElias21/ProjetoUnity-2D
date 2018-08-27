@@ -90,7 +90,7 @@ public class GM : MonoBehaviour {
     void DisplayHudData() {
         ui.hud.TxtCoinCount.text = "x " + data.coinCount;
         ui.hud.txtLifeCount.text = "x " + data.lifeCount;
-        ui.hud.txtTimer.text = "Timer: " + timeLeft.ToString("F1");
+        ui.hud.txtTimer.text = "Timer : " + timeLeft.ToString("F1");
     }
     public void IncrementCoinCount() {
         data.coinCount++;
@@ -133,7 +133,7 @@ public class GM : MonoBehaviour {
     void GameOver()
     {
         ui.gameOver.TxtCoinCount.text = "Coins: " + data.coinCount;
-        ui.gameOver.txtTimer.text = "Timer: " + timeLeft.ToString("F1");
+        ui.gameOver.txtTimer.text = "Timer : " + timeLeft.ToString("F1");
         ui.gameOver.GameOverPanel.SetActive(true);
     }
 
@@ -142,7 +142,7 @@ public class GM : MonoBehaviour {
         Destroy(player.gameObject);
         TimerOn = false;
         ui.levelComplete.TxtCoinCount.text = "Coins: " + data.coinCount;
-        ui.levelComplete.txtTimer.text = "Timer: " + timeLeft.ToString("F1");
+        ui.levelComplete.txtTimer.text = "Timer : " + timeLeft.ToString("F1");
         ui.levelComplete.LevelCompletePanel.SetActive(true);
     }
 
